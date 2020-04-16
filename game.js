@@ -10,7 +10,7 @@ var level=0;
 
 function playSound(name)
 {
-  var aud=new Audio(name+".mp3");
+  var aud=new Audio("sounds/"+name+".mp3");
   aud.play();
 }
 
@@ -26,12 +26,13 @@ $(document).keypress(function(){
 
 
 $(".btn").click(function(){
-
+	
   var userChosenColour=$(this).attr("id");
   userClickedPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
-  checkAnswer(userChosenColour.length-1);
+  console.log(userChosenColour);
+  checkAnswer(userClickedPattern.length-1);
 });
 
 
